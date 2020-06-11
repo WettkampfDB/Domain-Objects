@@ -25,12 +25,8 @@ package de.wettkampfdb.domain.objects;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.xml.validation.Validator;
 import java.net.MalformedURLException;
 import java.time.LocalDate;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
