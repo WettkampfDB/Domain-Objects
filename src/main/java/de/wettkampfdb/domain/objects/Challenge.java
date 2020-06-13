@@ -22,10 +22,7 @@
 
 package de.wettkampfdb.domain.objects;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -41,7 +38,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Challenge
+public final class Challenge
 {
     /**
      * Name of the challenge as defined by the organizer.

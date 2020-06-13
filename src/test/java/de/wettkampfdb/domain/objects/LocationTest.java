@@ -36,11 +36,13 @@ class LocationTest
     {
         Location location = Location.builder()
             .city("Berlin")
+            .postCode("10115")
             .address("Brandenburger Tor")
             .countryCode(CountryCode.DE)
             .build();
 
         assertThat(location.getCity()).isEqualTo("Berlin");
+        assertThat(location.getPostCode()).isEqualTo("10115");
         assertThat(location.getAddress()).isEqualTo("Brandenburger Tor");
         assertThat(location.getCountryCode()).isEqualTo(CountryCode.DE);
     }
@@ -51,10 +53,12 @@ class LocationTest
     {
         Location location = new Location();
         location.setCity("Berlin");
+        location.setPostCode("10115");
         location.setAddress("Brandenburger Tor");
         location.setCountryCode(CountryCode.DE);
 
         assertThat(location.getCity()).isEqualTo("Berlin");
+        assertThat(location.getPostCode()).isEqualTo("10115");
         assertThat(location.getAddress()).isEqualTo("Brandenburger Tor");
         assertThat(location.getCountryCode()).isEqualTo(CountryCode.DE);
     }

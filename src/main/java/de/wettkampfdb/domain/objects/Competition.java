@@ -31,7 +31,7 @@ import javax.validation.constraints.NotNull;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.List;
+import java.util.*;
 
 /**
  * Domain object to represent sport competitions.
@@ -46,7 +46,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Competition
+public final class Competition
 {
     /**
      * Name of the competition as defined by the organizer.
@@ -92,10 +92,11 @@ public class Competition
     /**
      * Convenience setter for setting {@code url} from {@code String}.
      *
-     * @param url the {@code String} to parse as a URL.
+     * @param url the {@code String} to parse as a URL
      */
     @Tolerate
-    public void setUrl (String url) throws MalformedURLException
+    public void setUrl (String url)
+    throws MalformedURLException
     {
         this.setUrl(new URL(url));
     }
@@ -112,7 +113,8 @@ public class Competition
             return this;
         }
 
-        public CompetitionBuilder url (String url) throws MalformedURLException
+        public CompetitionBuilder url (String url)
+        throws MalformedURLException
         {
             this.url = new URL(url);
             return this;

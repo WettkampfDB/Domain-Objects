@@ -23,10 +23,7 @@
 package de.wettkampfdb.domain.objects;
 
 import com.neovisionaries.i18n.CountryCode;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -41,13 +38,18 @@ import javax.validation.constraints.NotNull;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Location
+public final class Location
 {
     /**
      * The city name.
      */
     @NotBlank
     private String city;
+
+    /**
+     * Local post code.
+     */
+    private String postCode;
 
     /**
      * Address including name of street and house number.
