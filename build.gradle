@@ -26,10 +26,14 @@ plugins {
 }
 
 group 'de.wettkampfdb'
-version '1.0.0'
+version '1.0.1'
 
 repositories {
     mavenCentral()
+}
+
+java {
+    withSourcesJar()
 }
 
 dependencies {
@@ -63,6 +67,26 @@ publishing {
     publications {
         gpr(MavenPublication) {
             from(components.java)
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'WettkampfDB Domain Objects'
+                description = 'Data transfering objects uses by the WettkampfDB Domain'
+                url = 'https://www.wettkampfdb.de'
+                developers {
+                    developer {
+                        id = 'sullrich84'
+                        name = 'Sebastian Ullrich'
+                        email = 'sebastian.ullrich@deepsource.de'
+                    }
+                }
+            }
         }
     }
 }

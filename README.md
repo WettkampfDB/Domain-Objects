@@ -20,7 +20,19 @@ Add the following to your `pom.xml` file:
 Add the following to your `build.gradle` file:
 
 ```groovy
-implementation "de.wettkampfdb:domain-objects:1.0.0"
+repositories {
+    maven {
+        url "https://maven.pkg.github.com/WettkampfDB/Domain-Objects"
+        credentials {
+            username = System.getenv("GITHUB_USERNAME")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
+}
+
+dependencies {
+    implementation "de.wettkampfdb:domain-objects:1.0.0"
+}
 ```
 
 ## Usage
