@@ -84,6 +84,12 @@ public final class Competition
     private List<Challenge> challenges;
 
     /**
+     * Location of the competition.
+     */
+    @NotNull
+    private Location location;
+
+    /**
      * URL to the official website of the competition.
      */
     @NotNull
@@ -102,7 +108,7 @@ public final class Competition
     }
 
     /**
-     * Additional builder implementations.
+     * Additional (convenience) builder implementations to be added to Lombok.
      */
     @SuppressWarnings("unused")
     public static class CompetitionBuilder
