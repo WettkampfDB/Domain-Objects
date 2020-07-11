@@ -79,8 +79,8 @@ public final class Competition
      *                     └── City 10km Run
      * </pre>
      */
-    @NotEmpty
     @Singular
+    @NotEmpty
     private List<Challenge> challenges;
 
     /**
