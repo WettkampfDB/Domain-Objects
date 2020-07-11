@@ -20,13 +20,29 @@
  * IN THE SOFTWARE.
  */
 
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+
+    dependencies {
+        classpath "com.palantir.gradle.gitversion:gradle-git-version:0.12.2"
+        classpath "com.adarshr:gradle-test-logger-plugin:2.1.0"
+    }
+}
+
 plugins {
-    id 'java'
+    id "com.palantir.git-version" version "0.12.3"
+    id "com.adarshr.test-logger" version "2.1.0"
     id 'maven-publish'
+    id 'java'
 }
 
 group 'de.wettkampfdb'
-version '1.0.5'
+version = versionDetails().lastTag ?: "SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -55,9 +71,25 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
+}
+
+testlogger {
+    theme 'standard'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 2500
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showStandardStreams false
+    showPassedStandardStreams true
+    showSkippedStandardStreams true
+    showFailedStandardStreams true
+    logLevel 'lifecycle'
 }
 
 publishing {
