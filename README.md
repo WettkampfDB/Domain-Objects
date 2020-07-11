@@ -1,3 +1,6 @@
+<img src="https://raw.githubusercontent.com/WettkampfDB/Domain-Objects/master/.github/assets/wdb-header.svg?sanitize=true">
+
+
 # Domain-Objects
 This repository contains domain objects which are used for data transfer between 
 multiple services of the WettkampfDB domain. You can add `domain-objects` to 
