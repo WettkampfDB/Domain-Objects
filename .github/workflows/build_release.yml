@@ -22,7 +22,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Publish Package
-          run: ./gradlew publish
-          env:
-            GITHUB_USERNAME: ${{ secrets.GH_USERNAME }}
-            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: ./gradlew publish
+        env:
+          GITHUB_USERNAME: ${{ secrets.GH_USERNAME }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
