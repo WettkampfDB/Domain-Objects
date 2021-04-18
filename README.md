@@ -15,7 +15,7 @@ Add the following to your `pom.xml` file:
 <dependency>
   <groupId>de.wettkampfdb</groupId>
   <artifactId>domain-objects</artifactId>
-  <version>1.0.1</version>
+  <version>x.x.x</version>
 </dependency>
 ```
 
@@ -35,7 +35,7 @@ repositories {
 }
 
 dependencies {
-    implementation "de.wettkampfdb:domain-objects:1.0.1"
+    implementation "de.wettkampfdb:domain-objects:x.x.x"
 }
 ```
 

@@ -73,25 +73,6 @@ test {
     useJUnitPlatform()
 }
 
-testlogger {
-    theme 'standard'
-    showExceptions true
-    showStackTraces true
-    showFullStackTraces false
-    showCauses true
-    slowThreshold 2500
-    showSummary true
-    showSimpleNames false
-    showPassed true
-    showSkipped true
-    showFailed true
-    showStandardStreams false
-    showPassedStandardStreams true
-    showSkippedStandardStreams true
-    showFailedStandardStreams true
-    logLevel 'lifecycle'
-}
-
 publishing {
     repositories {
         maven {
@@ -106,26 +87,6 @@ publishing {
     publications {
         gpr(MavenPublication) {
             from(components.java)
-            versionMapping {
-                usage('java-api') {
-                    fromResolutionOf('runtimeClasspath')
-                }
-                usage('java-runtime') {
-                    fromResolutionResult()
-                }
-            }
-            pom {
-                name = 'WettkampfDB Domain Objects'
-                description = 'Data transfering objects uses by the WettkampfDB Domain'
-                url = 'https://www.wettkampfdb.de'
-                developers {
-                    developer {
-                        id = 'sullrich84'
-                        name = 'Sebastian Ullrich'
-                        email = 'sebastian.ullrich@deepsource.de'
-                    }
-                }
-            }
         }
     }
 }
